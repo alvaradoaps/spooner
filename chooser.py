@@ -29,3 +29,15 @@ def alloc_data(xlsx_file, column_one_name, column_two_name):
     column_one = data[column_one_name]
     column_two = data[column_two_name]
     return zip(column_one, column_two)
+
+def clean_data():
+    '''This function should replace [&] with [&amp;], and [or] with [|]'''
+    pass
+
+class ChooserData:
+    
+    def __init__(self):
+        self.printed_form = printed_form
+        
+    def __str__(self):
+        return str(self.__str__)
