@@ -23,21 +23,27 @@ def build_tc(to_search, to_assign):
                         <TrueValue><![CDATA[{}]]</TrueValue>
                       </Transformation>'''.format(to_search, to_assign))
 
-def alloc_data(xlsx_file, column_one_name, column_two_name):
-    '''Allocates columns into a zip object.'''
-    data = read_excel(xlsx_file)
-    column_one = data[column_one_name]
-    column_two = data[column_two_name]
-    return zip(column_one, column_two)
-
 def clean_data():
     '''This function should replace [&] with [&amp;], and [or] with [|]'''
     pass
 
 class ChooserData:
     
-    def __init__(self):
-        self.printed_form = printed_form
+    def __init__(self, column_one, column_two):
+        self.column_one = column_one
+        self.column_two = column_two
+        self.column_one_name = column_one_name
+        self.column_two_name = column_two_name
+        self.xlsx_file = xlsx_file
         
     def __str__(self):
-        return str(self.__str__)
+        columns = str(self.column_one) + str(self.column_two)
+        return columns
+    
+    def alloc_data(self, xlsx_file, column_one_name, column_two_name):
+        '''Allocates columns into a zip object.'''
+        data = read_excel(self.xlsx_file)
+        column_one = data[self.column_one_name]
+        column_two = data[self.column_two_name]
+        return zip(self.column_one, self.column_two)
+    
