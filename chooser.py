@@ -19,8 +19,8 @@ def build_tc(to_search, to_assign):
                         <TrueValue><![CDATA[{}]]</TrueValue>
                       </Transformation>'''.format(to_search, to_assign))
 
-def allocData(xlsxFile, columnOneName, columnTwoName):
-   data = read_excel(xlsxFile)
-   columnOne = data[columnOneName]
-   columnTwo = data[columnTwoName]
-   return zip(columnOne, columnTwo)
+def alloc_data(xlsx_file, column_one_name, column_two_name):
+   data = read_excel(xlsx_file)
+   column_one = data[column_one_name]
+   column_two = data[column_two_name]
+   return zip(column_one, column_two)
